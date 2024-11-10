@@ -17,6 +17,9 @@ class Todo {
         todoNameEl.textContent = this._data.name;
         todoCheckboxEl.checked = this._data.completed;
 
+        todoCheckboxEl.id = `todo-${this._data.id}`;
+        todoLabel.setAttribute("for", `todo-${this._data.id}`);
+
         return this._todoElement;
     }
 }
