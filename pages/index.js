@@ -30,7 +30,7 @@ const todoCounter = new TodoCounter(initialTodos,".counter__text");
 const generateTodo = (data) => {
   const todo = new Todo(data, "#todo-template", handleCheck, handleDelete);
   const todoElement = todo.getView();
-  todoCounter.updateTotal(true);
+  //todoCounter.updateTotal(true);
   return todoElement;
 };
 
@@ -66,6 +66,7 @@ const addTodoPopup = new PopupWithForm({
     const todo = generateTodo(values);
     todoSection.addItem(todo);
     addTodoPopup.close();
+    todoCounter.updateTotal(true);
     newTodoValidator.resetValidation();
   }
 });
